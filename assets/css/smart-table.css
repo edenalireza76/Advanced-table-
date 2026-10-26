@@ -1,0 +1,193 @@
+.mwp-table-wrapper {
+    --mwp-p: #4187FF;
+    --mwp-p7: #1E5FD8;
+    --mwp-p9: #0E3A8A;
+    --mwp-p1: #EAF2FF;
+    --mwp-p0: #F5F9FF;
+    --mwp-a: #FCBB0B;
+    --mwp-a1: #FFF4D6;
+    --mwp-ink: #0B1B3F;
+    --mwp-mut: #4A5878;
+    --mwp-line: #DCE6F7;
+    --mwp-ok: #0F9D58;
+    --mwp-ok1: #E6F6EE;
+    --mwp-no: #B42318;
+    --mwp-no1: #FDECEC;
+    --mwp-pre-txt: #7A5300;
+    --mwp-r: 18px;
+    --mwp-sh: 0 10px 30px rgba(14, 58, 138, .08);
+    direction: rtl;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+.mwp-table-wrapper * {
+    box-sizing: border-box;
+}
+
+/* استایل تب‌های فیلتر */
+.mwp-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 16px 0;
+}
+
+.mwp-tab {
+    border: 1.5px solid var(--mwp-line);
+    background: #ffffff;
+    border-radius: 99px;
+    padding: 6px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--mwp-mut);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    line-height: 1.6;
+}
+
+.mwp-tab:hover {
+    border-color: var(--mwp-p7);
+    color: var(--mwp-p7);
+}
+
+.mwp-tab[aria-selected="true"] {
+    background: var(--mwp-p7);
+    color: #ffffff;
+    border-color: var(--mwp-p7);
+}
+
+/* باکس دور جدول */
+.mwp-tbl-container {
+    overflow-x: auto;
+    border: 1px solid var(--mwp-line);
+    border-radius: var(--mwp-r);
+    background: #ffffff;
+    box-shadow: var(--mwp-sh);
+    -webkit-overflow-scrolling: touch;
+}
+
+.mwp-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 640px;
+    font-size: 15px;
+    color: var(--mwp-ink);
+    margin: 0;
+    border: none;
+}
+
+/* هدر جدول */
+.mwp-table thead th {
+    background: var(--mwp-p1);
+    color: var(--mwp-p9);
+    font-weight: 800;
+    text-align: right;
+    padding: 14px 16px;
+    white-space: nowrap;
+    border: none;
+    border-bottom: 1px solid var(--mwp-line);
+}
+
+/* سلول‌های بدنه جدول */
+.mwp-table tbody td {
+    padding: 13px 16px;
+    border: none;
+    border-top: 1px solid var(--mwp-line);
+    vertical-align: middle;
+    background: #ffffff;
+    color: var(--mwp-ink);
+    transition: background-color 0.15s ease;
+}
+
+.mwp-table tbody tr:first-child td {
+    border-top: none;
+}
+
+/* هاور ردیف */
+.mwp-table tbody tr:hover td {
+    background: var(--mwp-p0);
+}
+
+/* ستون اول چسبان (Sticky) برای تجربه کاربری عالی در موبایل */
+.mwp-table.is-sticky-col th:first-child,
+.mwp-table.is-sticky-col td:first-child {
+    position: sticky;
+    right: 0;
+    z-index: 2;
+}
+
+.mwp-table.is-sticky-col th:first-child {
+    background: var(--mwp-p1);
+}
+
+.mwp-table tbody td:first-child {
+    font-weight: 700;
+}
+
+/* سایه ظریف برای ستون چسبان در اسکرول موبایل */
+@media (max-width: 767px) {
+    .mwp-table.is-sticky-col th:first-child,
+    .mwp-table.is-sticky-col td:first-child {
+        box-shadow: -4px 0 12px rgba(11, 27, 63, 0.04);
+    }
+}
+
+/* ردیف هایلایت شده (ویژه) */
+.mwp-table tbody tr.mwp-row-hl td {
+    background: var(--mwp-a1) !important;
+}
+
+/* استایل متن قیمت */
+.mwp-price-cell {
+    font-weight: 800;
+    color: var(--mwp-p9);
+    white-space: nowrap;
+}
+
+/* برچسب‌های کپسولی (Pills) */
+.mwp-pill {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 12px;
+    border-radius: 99px;
+    white-space: nowrap;
+    line-height: 1.6;
+}
+
+.mwp-pill.std {
+    background: var(--mwp-p1);
+    color: var(--mwp-p9);
+}
+
+.mwp-pill.eco,
+.mwp-pill.yes {
+    background: var(--mwp-ok1);
+    color: var(--mwp-ok);
+}
+
+.mwp-pill.pre,
+.mwp-pill.cond {
+    background: var(--mwp-a1);
+    color: var(--mwp-pre-txt);
+}
+
+.mwp-pill.no {
+    background: var(--mwp-no1);
+    color: var(--mwp-no);
+}
+
+/* متن توضیح زیر جدول (Caption) */
+.mwp-table-caption {
+    font-size: 13px;
+    color: var(--mwp-mut);
+    margin: 10px 0 0 0;
+}
+
+/* مخفی کردن ردیف‌های فیلتر شده */
+.mwp-table tbody tr[hidden] {
+    display: none !important;
+}
